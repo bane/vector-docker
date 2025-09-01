@@ -25,6 +25,8 @@ services:
       - ./config/node:/config
       - ./node-db:/data/db
       - ./node-ipc:/ipc
+    ports:
+      - 5521:5521
     restart: on-failure
     healthcheck:
       test: ["CMD-SHELL", "curl -f 127.0.0.1:12788 || exit 1"]
